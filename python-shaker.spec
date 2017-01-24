@@ -185,6 +185,9 @@ rm -f test-requirements.txt requirements.txt rtd-requirements.txt
 
 %{__python2} setup.py build_sphinx
 
+# remove the sphinx-build leftovers
+rm -rf doc/build/html/.{doctrees,buildinfo}
+
 PYTHONPATH=. oslo-config-generator --config-file=config-generator.conf
 
 %if 0%{?with_python3}
