@@ -1,5 +1,5 @@
-# UUID          Group Name
-False 	Non-Interactive Users
-83c3e6afdcbfa78836b45fca4bdc72ff3cd23f43       	openstack/shaker-distgit-core
-1d29c195f2783796771d45c138f089b088a982f8        	openstack/shaker-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+1d29c195f2783796771d45c138f089b088a982f8	openstack/shaker-distgit-ptl
+83c3e6afdcbfa78836b45fca4bdc72ff3cd23f43	openstack/shaker-distgit-core
+global:Registered-Users                 	Registered Users
