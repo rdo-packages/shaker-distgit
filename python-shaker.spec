@@ -73,6 +73,7 @@ Requires:       python-heatclient
 Requires:       PyYAML
 Requires:       python-zmq
 Requires:       python-six
+Requires:       python-subunit
 
 %description -n python2-%{sname}
 Shaker is the distributed dataplane testing tool built for OpenStack. Shaker wraps
@@ -137,6 +138,7 @@ Requires:       python3-heatclient
 Requires:       python3-PyYAML
 Requires:       python3-zmq
 Requires:       python3-six
+Requires:       python3-subunit
 
 %description -n python3-%{sname}
 **The distributed dataplane testing tool built for OpenStack.**Shaker wraps
