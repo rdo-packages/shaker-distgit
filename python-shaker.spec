@@ -7,8 +7,8 @@
 %endif
 
 Name:           python-%{sname}
-Version:        XXX
-Release:        XXX
+Version:        0.0.17
+Release:        1%{?dist}
 Summary:        Distributed data-plane performance testing tool
 
 License:        ASL 2.0
@@ -293,3 +293,6 @@ m -rf .testrepository
 %{python2_sitelib}/%{sname}/tests
 
 %changelog
+* Fri Feb 10 2017 Alfredo Moralejo <amoralej@redhat.com> 0.0.17-1
+- Update to 0.0.17
+
