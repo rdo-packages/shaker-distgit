@@ -27,7 +27,6 @@ BuildRequires:  PyYAML
 BuildRequires:  python-oslo-log
 BuildRequires:  python-pykwalify
 # test requirements
-BuildRequires:  python-coverage
 BuildRequires:  python-mock
 BuildRequires:  python-oslotest
 BuildRequires:  python-testrepository
@@ -86,7 +85,6 @@ tests to execute.
 Summary:    Distributed data-plane performance testing tool tests
 Requires:   python2-%{sname} = %{version}-%{release}
 
-Requires:  python-coverage
 Requires:  python-mock
 Requires:  python-oslotest
 Requires:  python-testrepository
@@ -111,7 +109,6 @@ BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 
 # test requirements
-BuildRequires:  python-coverage
 BuildRequires:  python-mock
 BuildRequires:  python-oslotest
 BuildRequires:  python-testrepository
@@ -151,7 +148,6 @@ tests to execute. Additionally tests may be tuned dynamically in ...
 Summary:    Distributed data-plane performance testing tool tests
 Requires:   python3-%{sname} = %{version}-%{release}
 
-Requires:  python3-coverage
 Requires:  python3-mock
 Requires:  python3-oslotest
 Requires:  python3-testrepository
