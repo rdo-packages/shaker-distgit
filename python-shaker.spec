@@ -51,24 +51,24 @@ tests to execute.
 Summary:        Distributed data-plane performance testing tool
 %{?python_provide:%python_provide python2-%{sname}}
 
+Requires:       diskimage-builder >= 1.1.2
 Requires:       python-pbr
 Requires:       python-iso8601
 Requires:       python-jinja2
-Requires:       python-keystoneauth1
-Requires:       python-os-client-config
-Requires:       python-oslo-concurrency
-Requires:       python-oslo-config
-Requires:       python-oslo-i18n
-Requires:       python-oslo-log
-Requires:       python-oslo-serialization
-Requires:       python-oslo-utils
-Requires:       python-psutil
+Requires:       python-keystoneauth1 >= 2.18.0
+Requires:       python-os-client-config >= 1.22.0
+Requires:       python-oslo-concurrency >= 3.8.0
+Requires:       python-oslo-config >= 2:3.14.0
+Requires:       python-oslo-i18n >= 2.1.0
+Requires:       python-oslo-log >= 3.11.0
+Requires:       python-oslo-serialization >= 1.10.0
+Requires:       python-oslo-utils >= 3.18.0
 Requires:       python-pygal
 Requires:       python-pykwalify
-Requires:       python-glanceclient
-Requires:       python-neutronclient
-Requires:       python-novaclient
-Requires:       python-heatclient
+Requires:       python-glanceclient >= 1:2.5.0
+Requires:       python-neutronclient  >= 5.1.0
+Requires:       python-novaclient >= 1:7.1.0
+Requires:       python-heatclient >= 1.6.1
 Requires:       PyYAML
 Requires:       python-zmq
 Requires:       python-six
