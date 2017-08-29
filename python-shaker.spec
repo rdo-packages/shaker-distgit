@@ -7,8 +7,8 @@
 %endif
 
 Name:           python-%{sname}
-Version:        XXX
-Release:        XXX
+Version:        1.1.0
+Release:        1%{?dist}
 Summary:        Distributed data-plane performance testing tool
 
 License:        ASL 2.0
@@ -289,3 +289,6 @@ m -rf .testrepository
 %{python2_sitelib}/%{sname}/tests
 
 %changelog
+* Wed Aug 30 2017 Haikel Guemar <hguemar@fedoraproject.org> 1.1.0-1
+- Update to 1.1.0
+
