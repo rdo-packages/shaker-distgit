@@ -6,6 +6,13 @@
 %global with_python3 1
 %endif
 
+%global common_desc \
+Shaker is the distributed dataplane testing tool built for OpenStack. Shaker wraps \
+around popular system network testing tools like iperf < iperf3 < and netperf \
+(with help of flent < Shaker is able to deploy OpenStack instances and networks \
+in different topologies. Shaker scenario specifies the deployment and list of \
+tests to execute.
+
 Name:           python-%{sname}
 Version:        1.1.0
 Release:        1%{?dist}
@@ -41,11 +48,7 @@ BuildRequires:  python-zmq
 BuildRequires:  python-psutil
 
 %description
-Shaker is the distributed dataplane testing tool built for OpenStack. Shaker wraps
-around popular system network testing tools like iperf < iperf3 < and netperf
-(with help of flent < Shaker is able to deploy OpenStack instances and networks
-in different topologies. Shaker scenario specifies the deployment and list of
-tests to execute.
+%{common_desc}
 
 %package -n     python2-%{sname}
 Summary:        Distributed data-plane performance testing tool
@@ -75,11 +78,7 @@ Requires:       python-six
 Requires:       python-subunit
 
 %description -n python2-%{sname}
-Shaker is the distributed dataplane testing tool built for OpenStack. Shaker wraps
-around popular system network testing tools like iperf < iperf3 < and netperf
-(with help of flent < Shaker is able to deploy OpenStack instances and networks
-in different topologies. Shaker scenario specifies the deployment and list of
-tests to execute.
+%{common_desc}
 
 %package -n python2-%{sname}-tests
 Summary:    Distributed data-plane performance testing tool tests
@@ -91,11 +90,7 @@ Requires:  python-testrepository
 Requires:  python-testtools
 
 %description -n python2-%{sname}-tests
-Shaker is the distributed dataplane testing tool built for OpenStack. Shaker wraps
-around popular system network testing tools like iperf < iperf3 < and netperf
-(with help of flent < Shaker is able to deploy OpenStack instances and networks
-in different topologies. Shaker scenario specifies the deployment and list of
-tests to execute.
+%{common_desc}
 
 It contains the unit tests for shaker.
 
@@ -154,11 +149,7 @@ Requires:  python3-testrepository
 Requires:  python3-testtools
 
 %description -n python3-%{sname}-tests
-Shaker is the distributed dataplane testing tool built for OpenStack. Shaker wraps
-around popular system network testing tools like iperf < iperf3 < and netperf
-(with help of flent < Shaker is able to deploy OpenStack instances and networks
-in different topologies. Shaker scenario specifies the deployment and list of
-tests to execute.
+%{common_desc}
 
 It contains the unit tests for shaker.
 %endif
