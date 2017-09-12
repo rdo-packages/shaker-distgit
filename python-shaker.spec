@@ -109,10 +109,10 @@ BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 
 # test requirements
-BuildRequires:  python-mock
-BuildRequires:  python-oslotest
-BuildRequires:  python-testrepository
-BuildRequires:  python-testtools
+BuildRequires:  python3-mock
+BuildRequires:  python3-oslotest
+BuildRequires:  python3-testrepository
+BuildRequires:  python3-testtools
 
 Requires:       python3-pbr
 Requires:       python3-iso8601
@@ -217,7 +217,7 @@ install -p -D -m 640 etc/shaker.conf %{buildroot}%{_sysconfdir}/pyshaker/shaker.
 %check
 %{__python2} setup.py test
 %if 0%{?with_python3}
-m -rf .testrepository
+rm -rf .testrepository
 %{__python3} setup.py test
 %endif
 
