@@ -1,6 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global sname shaker
 %global pypi_name pyshaker
+%global with_doc 1
 
 %if 0%{?fedora}
 %global with_python3 1
@@ -163,6 +164,7 @@ tests to execute.
 It contains the unit tests for shaker.
 %endif
 
+%if 0%{?with_doc}
 %package -n python-%{sname}-doc
 Summary:        Shaker documentation
 
@@ -172,12 +174,14 @@ BuildRequires:   python-sphinx_rtd_theme
 
 %description -n python-%{sname}-doc
 Documentation for shaker
+%endif
 
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 
 rm -f test-requirements.txt requirements.txt rtd-requirements.txt
 
+%if 0%{?with_doc}
 %build
 %py2_build
 
@@ -185,6 +189,7 @@ rm -f test-requirements.txt requirements.txt rtd-requirements.txt
 
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 
 PYTHONPATH=. oslo-config-generator --config-file=config-generator.conf
 
@@ -280,9 +285,11 @@ rm -rf .testrepository
 %{python3_sitelib}/%{sname}/tests
 %endif
 
+%if 0%{?with_doc}
 %files -n python-%{sname}-doc
 %license LICENSE
 %doc doc/build/html
+%endif
 
 %files -n python2-%{sname}-tests
 %license LICENSE
