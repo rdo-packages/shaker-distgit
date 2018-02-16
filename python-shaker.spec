@@ -14,8 +14,8 @@ in different topologies. Shaker scenario specifies the deployment and list of \
 tests to execute.
 
 Name:           python-%{sname}
-Version:        1.1.0
-Release:        1%{?dist}
+Version:        XXX
+Release:        XXX
 Summary:        Distributed data-plane performance testing tool
 
 License:        ASL 2.0
@@ -25,27 +25,27 @@ Source0:        http://tarballs.openstack.org/%{sname}/%{pypi_name}-%{upstream_v
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
+BuildRequires:  python2-pbr
+BuildRequires:  python2-setuptools
 BuildRequires:  git
 # for config generation
-BuildRequires:  python-oslo-config
+BuildRequires:  python2-oslo-config
 BuildRequires:  PyYAML
-BuildRequires:  python-oslo-log
-BuildRequires:  python-pykwalify
+BuildRequires:  python2-oslo-log
+BuildRequires:  python2-pykwalify
 # test requirements
-BuildRequires:  python-mock
-BuildRequires:  python-oslotest
-BuildRequires:  python-testrepository
-BuildRequires:  python-testtools
-BuildRequires:  python-heatclient
-BuildRequires:  python-novaclient
-BuildRequires:  python-neutronclient
-BuildRequires:  python-glanceclient
-BuildRequires:  python-oslo-concurrency
+BuildRequires:  python2-mock
+BuildRequires:  python2-oslotest
+BuildRequires:  python2-testrepository
+BuildRequires:  python2-testtools
+BuildRequires:  python2-heatclient
+BuildRequires:  python2-novaclient
+BuildRequires:  python2-neutronclient
+BuildRequires:  python2-glanceclient
+BuildRequires:  python2-oslo-concurrency
 BuildRequires:  python-pygal
 BuildRequires:  python-zmq
-BuildRequires:  python-psutil
+BuildRequires:  python2-psutil
 
 %description
 %{common_desc}
@@ -55,27 +55,27 @@ Summary:        Distributed data-plane performance testing tool
 %{?python_provide:%python_provide python2-%{sname}}
 
 Requires:       diskimage-builder >= 1.1.2
-Requires:       python-pbr
-Requires:       python-iso8601
-Requires:       python-jinja2
-Requires:       python-keystoneauth1 >= 2.18.0
-Requires:       python-os-client-config >= 1.22.0
-Requires:       python-oslo-concurrency >= 3.8.0
-Requires:       python-oslo-config >= 2:3.14.0
-Requires:       python-oslo-i18n >= 2.1.0
-Requires:       python-oslo-log >= 3.11.0
-Requires:       python-oslo-serialization >= 1.10.0
-Requires:       python-oslo-utils >= 3.18.0
+Requires:       python2-pbr
+Requires:       python2-iso8601
+Requires:       python2-jinja2
+Requires:       python2-keystoneauth1 >= 2.18.0
+Requires:       python2-os-client-config >= 1.22.0
+Requires:       python2-oslo-concurrency >= 3.8.0
+Requires:       python2-oslo-config >= 2:3.14.0
+Requires:       python2-oslo-i18n >= 2.1.0
+Requires:       python2-oslo-log >= 3.11.0
+Requires:       python2-oslo-serialization >= 1.10.0
+Requires:       python2-oslo-utils >= 3.18.0
 Requires:       python-pygal
-Requires:       python-pykwalify
-Requires:       python-glanceclient >= 1:2.5.0
-Requires:       python-neutronclient  >= 5.1.0
-Requires:       python-novaclient >= 1:7.1.0
-Requires:       python-heatclient >= 1.6.1
+Requires:       python2-pykwalify
+Requires:       python2-glanceclient >= 1:2.5.0
+Requires:       python2-neutronclient  >= 5.1.0
+Requires:       python2-novaclient >= 1:7.1.0
+Requires:       python2-heatclient >= 1.6.1
 Requires:       PyYAML
 Requires:       python-zmq
-Requires:       python-six
-Requires:       python-subunit
+Requires:       python2-six
+Requires:       python2-subunit
 
 %description -n python2-%{sname}
 %{common_desc}
@@ -84,10 +84,10 @@ Requires:       python-subunit
 Summary:    Distributed data-plane performance testing tool tests
 Requires:   python2-%{sname} = %{version}-%{release}
 
-Requires:  python-mock
-Requires:  python-oslotest
-Requires:  python-testrepository
-Requires:  python-testtools
+Requires:  python2-mock
+Requires:  python2-oslotest
+Requires:  python2-testrepository
+Requires:  python2-testtools
 
 %description -n python2-%{sname}-tests
 %{common_desc}
@@ -157,7 +157,7 @@ It contains the unit tests for shaker.
 %package -n python-%{sname}-doc
 Summary:        Shaker documentation
 
-BuildRequires:   python-sphinx
+BuildRequires:   python2-sphinx
 BuildRequires:   python-sphinxcontrib-httpdomain
 BuildRequires:   python-sphinx_rtd_theme
 
