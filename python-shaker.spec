@@ -14,8 +14,8 @@ in different topologies. Shaker scenario specifies the deployment and list of \
 tests to execute.
 
 Name:           python-%{sname}
-Version:        XXX
-Release:        XXX
+Version:        1.1.1
+Release:        1%{?dist}
 Summary:        Distributed data-plane performance testing tool
 
 License:        ASL 2.0
@@ -280,6 +280,9 @@ rm -rf .testrepository
 %{python2_sitelib}/%{sname}/tests
 
 %changelog
+* Thu Feb 22 2018 RDO <dev@lists.rdoproject.org> 1.1.1-1
+- Update to 1.1.1
+
 * Wed Aug 30 2017 Haikel Guemar <hguemar@fedoraproject.org> 1.1.0-1
 - Update to 1.1.0
 
