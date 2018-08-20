@@ -104,10 +104,23 @@ BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 
 # test requirements
+BuildRequires:  python3-glanceclient
+BuildRequires:  python3-jinja2
+BuildRequires:  python3-heatclient
+BuildRequires:  python3-novaclient
+BuildRequires:  python3-neutronclient
 BuildRequires:  python3-mock
+BuildRequires:  python3-oslo-concurrency
+BuildRequires:  python3-oslo-config
+BuildRequires:  python3-oslo-log
 BuildRequires:  python3-oslotest
+BuildRequires:  python3-psutil
+BuildRequires:  python3-pygal
+BuildRequires:  python3-pykwalify
+BuildRequires:  python3-PyYAML
 BuildRequires:  python3-testrepository
 BuildRequires:  python3-testtools
+BuildRequires:  python3-zmq
 
 Requires:       python3-pbr
 Requires:       python3-iso8601
