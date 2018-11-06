@@ -299,3 +299,4 @@ rm -rf .testrepository
 * Wed Aug 30 2017 Haikel Guemar <hguemar@fedoraproject.org> 1.1.0-1
 - Update to 1.1.0
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/shaker/commit/?id=abe9fbd877bc0114896b17e8c36b3fa6d71c7d02
