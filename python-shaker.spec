@@ -202,3 +202,4 @@ install -p -D -m 640 etc/shaker.conf %{buildroot}%{_sysconfdir}/pyshaker/shaker.
 
 %changelog
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/shaker/commit/?id=abe9fbd877bc0114896b17e8c36b3fa6d71c7d02
