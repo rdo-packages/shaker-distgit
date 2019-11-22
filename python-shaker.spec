@@ -14,6 +14,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global sname shaker
 %global pypi_name pyshaker
+%global with_doc 1
 
 %global common_desc \
 Shaker is the distributed dataplane testing tool built for OpenStack. Shaker wraps \
@@ -41,11 +42,6 @@ BuildRequires:  git
 BuildRequires:  python%{pyver}-oslo-config
 BuildRequires:  python%{pyver}-oslo-log
 BuildRequires:  python%{pyver}-pykwalify
-# test requirements
-BuildRequires:  python%{pyver}-mock
-BuildRequires:  python%{pyver}-oslotest
-BuildRequires:  python%{pyver}-testrepository
-BuildRequires:  python%{pyver}-testtools
 BuildRequires:  python%{pyver}-heatclient
 BuildRequires:  python%{pyver}-novaclient
 BuildRequires:  python%{pyver}-neutronclient
@@ -90,6 +86,7 @@ Requires:       python%{pyver}-novaclient >= 1:7.1.0
 Requires:       python%{pyver}-heatclient >= 1.6.1
 Requires:       python%{pyver}-six
 Requires:       python%{pyver}-subunit
+Requires:       python%{pyver}-timeout-decorator
 
 # Handle python2 exception
 %if %{pyver} == 2
@@ -110,16 +107,18 @@ Requires:       python%{pyver}-zmq
 Summary:    Distributed data-plane performance testing tool tests
 Requires:   python%{pyver}-%{sname} = %{version}-%{release}
 
-Requires:  python%{pyver}-mock
-Requires:  python%{pyver}-oslotest
-Requires:  python%{pyver}-testrepository
-Requires:  python%{pyver}-testtools
+BuildRequires:  python%{pyver}-mock
+BuildRequires:  python%{pyver}-oslotest
+BuildRequires:  python%{pyver}-testrepository
+BuildRequires:  python%{pyver}-testtools
+BuildRequires:  python%{pyver}-timeout-decorator
 
 %description -n python%{pyver}-%{sname}-tests
 %{common_desc}
 
 It contains the unit tests for shaker.
 
+%if 0%{?with_doc}
 %package -n python-%{sname}-doc
 Summary:        Shaker documentation
 
@@ -129,6 +128,7 @@ BuildRequires:   python%{pyver}-sphinx_rtd_theme
 
 %description -n python-%{sname}-doc
 Documentation for shaker
+%endif
 
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
@@ -192,13 +192,14 @@ install -p -D -m 640 etc/shaker.conf %{buildroot}%{_sysconfdir}/pyshaker/shaker.
 %exclude %{pyver_sitelib}/%{sname}/tests
 %config(noreplace) %{_sysconfdir}/%{pypi_name}/*.conf
 
+%if 0%{?with_doc}
 %files -n python-%{sname}-doc
 %license LICENSE
 %doc doc/build/html
+%endif
 
 %files -n python%{pyver}-%{sname}-tests
 %license LICENSE
 %{pyver_sitelib}/%{sname}/tests
 
 %changelog
-
