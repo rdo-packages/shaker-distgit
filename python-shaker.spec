@@ -7,9 +7,9 @@
 %global __python %{__python2}
 %endif
 %global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
+%global pyver_sitelib %{expand:%{python%{pyver}_sitelib}}
+%global pyver_install %{expand:%{py%{pyver}_install}}
+%global pyver_build %{expand:%{py%{pyver}_build}}
 # End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global sname shaker
@@ -23,8 +23,8 @@ in different topologies. Shaker scenario specifies the deployment and list of \
 tests to execute.
 
 Name:           python-%{sname}
-Version:        XXX
-Release:        XXX
+Version:        1.1.3
+Release:        1%{?dist}
 Summary:        Distributed data-plane performance testing tool
 
 License:        ASL 2.0
@@ -201,4 +201,9 @@ install -p -D -m 640 etc/shaker.conf %{buildroot}%{_sysconfdir}/pyshaker/shaker.
 %{pyver_sitelib}/%{sname}/tests
 
 %changelog
+* Tue Aug 28 2018 RDO <dev@lists.rdoproject.org> 1.1.3-1
+- Update to 1.1.3
+
+* Wed Aug 30 2017 Haikel Guemar <hguemar@fedoraproject.org> 1.1.0-1
+- Update to 1.1.0
 
