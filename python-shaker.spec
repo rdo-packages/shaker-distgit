@@ -23,8 +23,8 @@ in different topologies. Shaker scenario specifies the deployment and list of \
 tests to execute.
 
 Name:           python-%{sname}
-Version:        XXX
-Release:        XXX
+Version:        1.3.4
+Release:        1%{?dist}
 Summary:        Distributed data-plane performance testing tool
 
 License:        ASL 2.0
@@ -201,4 +201,7 @@ install -p -D -m 640 etc/shaker.conf %{buildroot}%{_sysconfdir}/pyshaker/shaker.
 %{pyver_sitelib}/%{sname}/tests
 
 %changelog
+* Tue Apr 28 2020 RDO <dev@lists.rdoproject.org> 1.3.4-1
+- Update to 1.3.4
+
 
