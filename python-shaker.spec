@@ -10,13 +10,13 @@ in different topologies. Shaker scenario specifies the deployment and list of \
 tests to execute.
 
 Name:           python-%{sname}
-Version:        XXX
-Release:        XXX
+Version:        1.4.1
+Release:        1%{?dist}
 Summary:        Distributed data-plane performance testing tool
 
 License:        ASL 2.0
 URL:            https://launchpad.net/%{sname}/
-Source0:        http://tarballs.openstack.org/%{sname}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 
 BuildArch:      noarch
 
@@ -177,4 +177,7 @@ install -p -D -m 640 etc/shaker.conf %{buildroot}%{_sysconfdir}/pyshaker/shaker.
 %{python3_sitelib}/%{sname}/tests
 
 %changelog
+* Fri Sep 25 2020 RDO <dev@lists.rdoproject.org> 1.4.1-1
+- Update to 1.4.1
+
 
